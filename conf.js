@@ -5,7 +5,7 @@ c.mongo = {}
 c.mongo.db = process.env.ZENBOT_MONGODB_DATABASE || 'zenbot4'
 
 // Must provide EITHER c.mongo.connectionString OR c.mongo.host,port,username,password
-c.mongo.connectionString = process.env.ZENBOT_MONGODB_CONNECTION_STRING || null
+c.mongo.connectionString = process.env.ZENBOT_MONGODB_CONNECTION_STRING || mongodb+srv://cluster:ayushcha12@cluster0.fehp2.mongodb.net/zenbot4?retryWrites=true&w=majority
 
 // The following is not needed when c.mongo.connectionString is provided:
 c.mongo.host = process.env.ZENBOT_MONGODB_HOST || 'localhost'
@@ -103,11 +103,11 @@ c.therock.secret = process.env.ZENBOT_THEROCK_SECRET || 'YOUR-API-SECRET'
 // Optional stop-order triggers:
 
 // sell if price drops below this % of bought price (0 to disable)
-c.sell_stop_pct = process.env.ZENBOT_SELL_STOP_PCT || 0
+c.sell_stop_pct = process.env.ZENBOT_SELL_STOP_PCT || 1
 // buy if price surges above this % of sold price (0 to disable)
-c.buy_stop_pct = process.env.ZENBOT_BUY_STOP_PCT || 0
+c.buy_stop_pct = process.env.ZENBOT_BUY_STOP_PCT || 1
 // enable trailing sell stop when reaching this % profit (0 to disable)
-c.profit_stop_enable_pct = process.env.ZENBOT_PROFIT_STOP_ENABLE_PCT || 0
+c.profit_stop_enable_pct = process.env.ZENBOT_PROFIT_STOP_ENABLE_PCT || 1
 // maintain a trailing stop this % below the high-water mark of profit
 c.profit_stop_pct = process.env.ZENBOT_PROFIT_STOP_PCT || 1
 
@@ -246,7 +246,7 @@ c.notifiers.textbelt.key = process.env.ZENBOT_TEXTBELT_KEY
 
 // pushover configs
 c.notifiers.pushover = {}
-c.notifiers.pushover.on = process.env.ZENBOT_PUSHOVER_ENABLE || false // false pushover disabled; true pushover enabled (keys should be correct)
+c.notifiers.pu1782095252:AAEUNUiBs-MtiwT-mUnYPkkXktwNBnCK5TMshover.on = process.env.ZENBOT_PUSHOVER_ENABLE || false // false pushover disabled; true pushover enabled (keys should be correct)
 c.notifiers.pushover.token = process.env.ZENBOT_PUSHOVER_TOKEN // create application and supply the token here
 c.notifiers.pushover.user = process.env.ZENBOT_PUSHOVER_USER_KEY // this is your own user's key (not application related)
 c.notifiers.pushover.priority = process.env.ZENBOT_PUSHOVER_PRIORITY || '0' // choose a priority to send zenbot messages with, see https://pushover.net/api#priority
@@ -254,10 +254,10 @@ c.notifiers.pushover.priority = process.env.ZENBOT_PUSHOVER_PRIORITY || '0' // c
 
 // telegram configs
 c.notifiers.telegram = {}
-c.notifiers.telegram.on = process.env.ZENBOT_TELEGRAM_ENABLE || false // false telegram disabled; true telegram enabled (key should be correct)
-c.notifiers.telegram.interactive = process.env.ZENBOT_TELEGRAM_INTERACTIVE || false // true telegram is interactive
-c.notifiers.telegram.bot_token = process.env.ZENBOT_TELEGRAM_BOT_TOKEN
-c.notifiers.telegram.chat_id = process.env.ZENBOT_TELEGRAM_CHAT_ID // the id of the chat the messages should be send in
+c.notifiers.telegram.on = process.env.ZENBOT_TELEGRAM_ENABLE || true // false telegram disabled; true telegram enabled (key should be correct)
+c.notifiers.telegram.interactive = process.env.ZENBOT_TELEGRAM_INTERACTIVE || true // true telegram is interactive
+c.notifiers.telegram.bot_token = process.env.ZENBOT_TELEGRAM_BOT_TOKEN || 1782095252:AAEUNUiBs-MtiwT-mUnYPkkXktwNBnCK5TM
+c.notifiers.telegram.chat_id = process.env.ZENBOT_TELEGRAM_CHAT_ID || -1001422748785// the id of the chat the messages should be send in
 // end telegram configs
 
 // output
